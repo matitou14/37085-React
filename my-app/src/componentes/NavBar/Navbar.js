@@ -1,18 +1,22 @@
+import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import "./Navbar.css";
 const Navbar = () => {
   return (
   <header className="header">
     <nav className='navbar'>
-      <img className="navbar__logo" src="./assets/img/Pupinoss.png" alt="logo" />
+      <Link to='/' className="navbar__logo">
+      <img src="./assets/img/Pupinoss.png" alt="logo" />
+      </Link>
       <input type="checkbox" className="input__nav" id="nav-toggle"/>
       <label htmlFor="nav-toggle"><i className="ri-menu-line"></i></label>
       <div className='navbar__menu'> 
         <ul className='navbar__list'>
-          <li className='navbar__item'><a href="#" className='navbar__link'>Inicio</a></li>
-          <li className='navbar__item'><a href="#" className='navbar__link'>Productos</a></li>
-          <li className='navbar__item'><a href="#" className='navbar__link'>Contacto</a></li>
-          <li className='navbar__item'><a href="#" className='item__carrito'> <CartWidget /> </a></li>  
+          <li className='navbar__item'><Link to='/' className='navbar__link'>Inicio</Link></li>
+          <li className='navbar__item'><Link to='/categoria/sillones' className='navbar__link'>Sillones</Link></li>
+          <li className='navbar__item'><Link to='/categoria/RopaBebe'className='navbar__link'>Ropa Bebé</Link></li>
+          <li className='navbar__item'><Link to='/contacto' className='navbar__link'>Contacto</Link></li>
+          <li className='navbar__item'><Link to='/carrito' className='item__carrito'> <CartWidget /> </Link></li>  
         </ul>
       </div>
     </nav>

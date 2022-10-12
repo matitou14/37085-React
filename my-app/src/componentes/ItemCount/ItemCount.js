@@ -4,6 +4,7 @@ import "./ItemCount.css";
 
 
 const ItemCount = () => {
+ 
   const [ cont, setCount] = useState(0);
 
   const suma = () => {
@@ -15,10 +16,13 @@ const resta = () => {
   return (
     <div className='card__prod'>
     <div>Detalles</div>
-    <div className='card__cont'>{cont} </div>
-      <button onClick={suma}>+</button>
-      <button onClick={resta}>-</button>
+    <div className='card__cont'>
+        <button className='card__button' onClick={resta}>-</button>
+          <div>{cont}</div> 
+        <button className='card__button' onClick={suma}>+</button>
+      </div>
     </div>
+
   )
 }
 

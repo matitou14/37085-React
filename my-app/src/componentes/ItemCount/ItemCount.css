@@ -1,9 +1,24 @@
 .card__prod{
-    width: 15px;
-    height: 25px;
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 250px;
     background-color: aquamarine;
     text-align: center;
-    font-size: larger;
-
-
+    font-size:large;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card__cont{
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+margin: 0 auto;
+gap: 5px;
+position: relative;
+right: 30px;
+}
+.card__button{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
