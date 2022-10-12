@@ -1,14 +1,15 @@
 import React from 'react'
 
-export const ItemDetail = ({productos = {
-    id: '1',
-    name: 'Sillon Didáctico Panda',
-    price: '$8000',
-    stock: 20,
-    foto:'https://ibb.co/QJwB49c',
 
-}}) => {
+export const ItemDetail = (product) => {
+ 
   return (
-    <div>ItemDetail</div>
+    <>
+    <h5> id: {product.id}</h5>,
+    <h5> name: {product.name}</h5>,
+    <h5> price: {product.price}</h5>,
+     
+     ItemDetail
+    </>
   )
-}
+  }

@@ -4,19 +4,21 @@ import { gFetch } from "../helpers/gFetch";
 // import ItemCount from "../ItemCount/ItemCount";
 import{useState, useEffect} from 'react';
 import { Link, useParams } from "react-router-dom";
+import "./ItemListContainer.css"
 
 
 
 function ItemListContainer() {
  const [products, setProducts] = useState([]);
  const [loading, setLoading ]= useState (true);
- const {idCategoria} = useParams(); 
- console.log(idCategoria);
+ const {idCategoria} = useParams()
+  console.log(idCategoria)
+
 
     useEffect(() => {
         if (idCategoria) {
  gFetch()
-.then((data) => setProducts (data.filter((product) => product.category === idCategoria)))
+.then(data => setProducts (data.filter(product => product.category === idCategoria)))
 .catch(err => console.log(err))
 .finally(() => setLoading(false))
         } else {gFetch()
@@ -28,7 +30,7 @@ function ItemListContainer() {
 
   return(
   <>
-    <div> Hello </div>
+    <div> Pupinos kids  </div>
     {/* <div> <ItemCount /> </div> */}
     { loading  ? <h2> cargando...</h2>
     :
