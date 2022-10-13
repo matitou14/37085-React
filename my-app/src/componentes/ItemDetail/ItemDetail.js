@@ -1,15 +1,27 @@
-import React from 'react'
+import React from 'react';
 
+export const ItemDetail = ( {product}) => {
+ console.log (product)
 
-export const ItemDetail = (product) => {
- 
   return (
-    <>
-    <h5> id: {product.id}</h5>,
-    <h5> name: {product.name}</h5>,
-    <h5> price: {product.price}</h5>,
+  <div 
+      key={product.id}
+      style={{ marginLeft: 100}}
+      className='col-md-3'>                        
      
-     ItemDetail
-    </>
-  )
-  }
+            <div className="card w-100 mt-5" >
+                 <div className="card-header">
+                      {`${product.name} - ${product.category}`}
+                </div>
+                <div className="card-body">
+                    <img src={product.foto} alt='' className='w-50' />
+                     {product.price}                                                            
+                </div>
+  
+                <div className="card-footer">                                                        
+                       
+            </div>
+    </div>
+  </div>
+  )}
+ 

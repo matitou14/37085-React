@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import Navbar from './componentes/NavBar/Navbar';
 import { CarritoPage } from './componentes/Pages/ItemDetailContainer/CarritoPage/CarritoPage';
-import { ItemDetailContainer } from './componentes/Pages/ItemDetailContainer/ItemDetailContainer';
+
 import { NotFound404 } from './componentes/NotFound404/NotFound404';
 import { Contacto } from './componentes/Contacto/Contacto';
+import { ItemDetailContainer } from './componentes/Pages/ItemDetailContainer/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
