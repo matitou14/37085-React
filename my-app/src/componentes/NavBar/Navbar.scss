@@ -1,22 +1,26 @@
+
 .navbar{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
-    padding: 15px;         
-    background-color: crimson; 
-    font-family:'PT Sans Narrow', sans-serif
-}
+    font-family:'PT Sans Narrow', sans-serif;
+    background-color: azure;
+    border: solid 1px black;
+    width: 100%;
+    padding: 1em;
+  
+} 
 .navbar a{
     text-decoration: none;
     color:inherit;
 }
 .navbar__logo{
-    width: 10%;
+    width:20%;
     margin-right: 50px;
     display: flex;
     flex-wrap: wrap;
+    object-fit: cover;
 
 }
 
@@ -24,6 +28,7 @@
     list-style: none;
     display: flex;
     gap: 25px;
+
 }
 .input__nav{
     display: none;
@@ -34,6 +39,7 @@
 .navbar label{
     display: none;
 }
+
 
 @media screen and (max-width: 600px){
  .navbar__menu{

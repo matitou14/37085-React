@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import Navbar from './componentes/NavBar/Navbar';

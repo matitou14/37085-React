@@ -4,7 +4,10 @@ import { gFetch } from "../helpers/gFetch";
 // import ItemCount from "../ItemCount/ItemCount";
 import{useState, useEffect} from 'react';
 import { Link, useParams } from "react-router-dom";
-import "./ItemListContainer.css"
+import "./ItemListContainer.scss"
+import { Loader } from "../Loaders/Loader";
+
+
 
 
 
@@ -32,30 +35,29 @@ function ItemListContainer() {
   <>
     <div> Pupinos kids  </div>
     {/* <div> <ItemCount /> </div> */}
-    { loading  ? <h2> cargando...</h2>
+    { loading  ? <div> <Loader /> </div>
     :
-      products.map ( (product, index) => <div 
-      key={product.id}
-      style={{ marginLeft: 100}}
-      className='col-md-3'>                        
-      <Link to={`/detalle/${product.id}`}>   
-            <div className="card w-100 mt-5" >
-                 <div className="card-header">
-                      {`${product.name} - ${product.category}`}
+      products.map ( (product, index) => 
+      <div key={product.id} className ="wrapper">                        
+      <Link to={`/detalle/${product.id}`}>     
+            
+                <div className="card">
+                  <img src= {product.foto} alt="Foto producto" className="card__image"/>
+                  <div className="card__body">
+                    <h2 className="card__title">{product.name} </h2>
+                    <p className="card__category">{product.category}</p>
+                    <h3 className="card__price">{product.price}</h3>
+
+      
+                  </div>
                 </div>
-                <div className="card-body">
-                    <img src={product.foto} alt='' className='w-50' />
-                     {product.price}                                                            
-                </div>
+        </Link>
+    
+      </div>  )}     
+ </>
+  )
   
-                <div className="card-footer">                                                        
-                       {/* <button className="btn btn-outline-primary btn-block">
-                  detalle del producto
-                        </button> */}
-                </div>
-            </div>
-      </Link>
-     </div> )}
-  </>
-)}
+
+
+  }   
 export default ItemListContainer

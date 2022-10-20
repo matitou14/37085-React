@@ -1,27 +1,27 @@
 import React from 'react';
+import { AgregarAlCarrito } from '../AgregarAlCarrito/AgregarAlCarrito';
+import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetail.scss';
 
 export const ItemDetail = ( {product}) => {
- console.log (product)
+ 
 
+const onAdd = (cantidad) => {
+console.log('onAdd', cantidad);
+}
   return (
-  <div 
-      key={product.id}
-      style={{ marginLeft: 100}}
-      className='col-md-3'>                        
+  <>
+    
+  <div className='card__detail'>                        
      
-            <div className="card w-100 mt-5" >
-                 <div className="card-header">
-                      {`${product.name} - ${product.category}`}
-                </div>
-                <div className="card-body">
-                    <img src={product.foto} alt='' className='w-50' />
-                     {product.price}                                                            
-                </div>
-  
-                <div className="card-footer">                                                        
-                       
-            </div>
+            <img src= {product.foto} alt="Foto producto" className="card__image__detail"/>
+                  <div className="card__body">
+                    <h4 className="card__title">{product.name} </h4>
+                    <p className="card__category">{product.category}</p>
+                    < ItemCount />
+                    <AgregarAlCarrito />
+                 </div>
     </div>
-  </div>
+    </>
   )}
  

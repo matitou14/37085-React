@@ -1,13 +1,4 @@
-.card__prod{
-    display: flex;
-    flex-direction: row;
-    width: 150px;
-    height: 250px;
-    background-color: aquamarine;
-    text-align: center;
-    font-size:large;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+
 .card__cont{
 display: flex;
 flex-direction: row;
@@ -21,4 +12,5 @@ right: 30px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin: 0 auto;
 }

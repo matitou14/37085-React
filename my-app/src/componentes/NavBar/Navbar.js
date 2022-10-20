@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
-import "./Navbar.css";
+import "./Navbar.scss";
 const Navbar = () => {
   return (
   <header className="header">
     <nav className='navbar'>
-      <Link to='/' className="navbar__logo">
-      <img src="./assets/img/Pupinoss.png" alt="logo" />
-      </Link>
+    <img className="navbar__logo" src= "./assets/img/Pupinoss.png" alt="logo" />
       <input type="checkbox" className="input__nav" id="nav-toggle"/>
       <label htmlFor="nav-toggle"><i className="ri-menu-line"></i></label>
       <div className='navbar__menu'> 

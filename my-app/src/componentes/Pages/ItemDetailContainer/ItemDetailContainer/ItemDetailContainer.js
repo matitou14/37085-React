@@ -2,8 +2,10 @@ import React from 'react';
 import { gFetch } from "../../../helpers/gFetch";
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
-import'./ItemDetailContainer.css'
+import'./ItemDetailContainer.scss'
 import { ItemDetail } from '../../../ItemDetail/ItemDetail';
+import { Loader } from '../../../Loaders/Loader';
+import { AgregarAlCarrito} from '../../../AgregarAlCarrito/AgregarAlCarrito'; 
 
 
 export const ItemDetailContainer = () => {
@@ -29,8 +31,9 @@ gFetch()
 
   return (
       <>
-        {loading ? <h4> loading...</h4>:
+        {loading ? <h4> <Loader /> </h4>:
         < ItemDetail product = {(product)} />}
+        
       </>
   )
 }
