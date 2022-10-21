@@ -39,6 +39,10 @@
 .navbar label{
     display: none;
 }
+.item__carrito:hover{
+    transform: scale(1.3);
+    
+}   
 
 
 @media screen and (max-width: 600px){
@@ -62,7 +66,9 @@
 
 }
 }
-.item__carrito:hover{
-    transform: scale(1.3);
-    
-}   
+@media screen and (max-width: 590px){
+
+    .navbar__logo{
+     display:none
+    }
+}

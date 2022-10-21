@@ -8,11 +8,15 @@ import { CarritoPage } from './componentes/Pages/ItemDetailContainer/CarritoPage
 import { NotFound404 } from './componentes/NotFound404/NotFound404';
 import { Contacto } from './componentes/Contacto/Contacto';
 import { ItemDetailContainer } from './componentes/Pages/ItemDetailContainer/ItemDetailContainer/ItemDetailContainer';
+import CartContextProvider from './context/cartContext';
+ 
 
 
 function App() {
-  return (
-
+  
+  
+  return ( 
+    <CartContextProvider>
     <BrowserRouter>
       <Navbar /> 
       <Routes> 
@@ -25,6 +29,7 @@ function App() {
         <Route path="*" element={<Navigate to='/404' />} />
        </Routes>
    </BrowserRouter>
+   </CartContextProvider>
   ) 
     
    }
