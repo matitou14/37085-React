@@ -8,7 +8,7 @@ const { cartlist, vaciarCarrito } = useCartContext()
     <div>
      <h1> Carrito de compras</h1>
      <ul> 
-        {cartlist.map((product) => <li> <img>{product.foto} </img> Nombre: {product.name} Categoria: {product.category} Cant: {product.cantidad}</li> )}
+        {cartlist.map((product) => <li> Nombre: {product.name} Categoria: {product.category} Cant: {product.cantidad}</li> )}
       </ul>
       <button onClick={(vaciarCarrito)} > Vaciar Carrito</button>
     </div>
