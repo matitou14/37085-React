@@ -1,5 +1,5 @@
 import { useCartContext } from '../../context/cartContext';
-import { AgregarAlCarrito } from '../AgregarAlCarrito/AgregarAlCarrito';
+
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.scss';
 
@@ -22,9 +22,10 @@ addItem( { ...product, cantidad })
                     <h4 className="card__title">{product.name} </h4>
                     <p className="card__category">{product.category}</p>
                     <button onClick={() => onAdd()} > Agregar Al Carrito</button>
-                    {/* < ItemCount onAdd={onAdd} />
-                    <AgregarAlCarrito /> */}
+                     
+                    
                  </div>
+                 < ItemCount onAdd={onAdd} stock={product.stock} init={1} />
     </div>
     </>
   )}
