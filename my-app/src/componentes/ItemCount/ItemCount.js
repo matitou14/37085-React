@@ -27,7 +27,9 @@ onAdd(cont);
         <button className='card__button' onClick={resta}>-</button>
           <div>{cont}</div> 
         <button className='card__button' onClick={suma}>+</button>
+        <div className='card__cont__car'>
         <button onClick={agregaCarrito}> Agregar Al Carrito</button>
+        </div>
       </div>
 
 

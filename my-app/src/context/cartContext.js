@@ -9,6 +9,9 @@ const [cartlist, setCartlist] = useState([])
 
 const addItem = (producto) => {
     setCartlist([ ...cartlist , producto])
+    
+    // const isInCart = (id) => cartlist.some(producto => producto.id === id)
+    
 }
 
 
@@ -18,14 +21,17 @@ const vaciarCarrito = () => {
 }
 
   return (
+
     <CartContext.Provider value={{
+      
         cartlist,
         addItem,
-        vaciarCarrito
+        vaciarCarrito,
+        
 
     }}>
       {children}
     </CartContext.Provider>
   )
-}
+  }
 export default CartContextProvider

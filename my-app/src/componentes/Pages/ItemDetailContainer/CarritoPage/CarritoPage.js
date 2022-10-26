@@ -5,11 +5,11 @@ export const CarritoPage = () => {
 const { cartlist, vaciarCarrito } = useCartContext()
 
   return (
-    <div>
+    <div className='carrito__render'>
      <h1> Carrito de compras</h1>
-     <ul> 
-        {cartlist.map((product) => <li> Nombre: {product.name} Categoria: {product.category} Cant: {product.cantidad}</li> )}
-      </ul>
+     <ul className='carrito__fin'> 
+        {cartlist.map((product) => <li> <div> <img src={product.foto}/> </div> Nombre: {product.name} Categoria: {product.category} Cant: {product.cantidad}</li> )}
+    </ul>
       <button onClick={(vaciarCarrito)} > Vaciar Carrito</button>
     </div>
   )

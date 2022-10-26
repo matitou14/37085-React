@@ -6,11 +6,20 @@ align-items: flex-end;
 margin: 0 auto;
 gap: 5px;
 position: relative;
-right: 30px;
+left: 200px;
+bottom: 40px;
 }
 .card__button{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin: 0 auto;
+}
+
+.card__cont__car{
+     margin: 0 auto;
+    gap: 5px;
+    position: relative;
+    right: 90px;
+    bottom: -40px;
 }
