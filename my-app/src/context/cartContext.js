@@ -8,17 +8,33 @@ import { createContext, useContext, useState } from 'react'
 const [cartlist, setCartlist] = useState([])
 
 const addItem = (producto) => {
-    setCartlist([ ...cartlist , producto])
-    
-    // const isInCart = (id) => cartlist.some(producto => producto.id === id)
-    
+  const idx = cartlist.findIndex((product) => producto.id === product.id) 
+  if (idx === -1) {
+    setCartlist([ ...cartlist, producto])
+}else{
+  cartlist[idx].cantidad += producto.cantidad
+  setCartlist([...cartlist])
+}
+}
+const totalCart = () => {
+return  cartlist.reduce((acc, product) => acc + product.price * product.cantidad, 0)
 }
 
+const totalQuantity = () => {
+return cartlist.reduce((acum, product) => acum += product.cantidad, 0)
 
-const vaciarCarrito = () => {
+}
+
+const removeItem = (id) => {
+    setCartlist(cartlist.filter(product => product.id !== id))
+}
+
+const clearCart = () => {
 
     setCartlist ([])
 }
+    
+
 
   return (
 
@@ -26,12 +42,15 @@ const vaciarCarrito = () => {
       
         cartlist,
         addItem,
-        vaciarCarrito,
+        totalCart,
+        totalQuantity,
+        removeItem,
+        clearCart,
         
 
     }}>
       {children}
     </CartContext.Provider>
   )
-  }
+    }
 export default CartContextProvider

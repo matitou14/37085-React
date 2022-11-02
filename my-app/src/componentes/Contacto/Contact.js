@@ -1,6 +1,6 @@
 import React from 'react';
-import './Contacto.scss';
-export const Contacto = () => {
+import './Contact.scss';
+export const Contact = () => {
   return (
     
     <div className='contact__container'>

@@ -6,7 +6,7 @@ import Navbar from './componentes/NavBar/Navbar';
 import { CarritoPage } from './componentes/Pages/ItemDetailContainer/CarritoPage/CarritoPage';
 
 import { NotFound404 } from './componentes/NotFound404/NotFound404';
-import { Contacto } from './componentes/Contacto/Contacto';
+import { Contact } from './componentes/Contacto/Contact';
 import { ItemDetailContainer } from './componentes/Pages/ItemDetailContainer/ItemDetailContainer/ItemDetailContainer';
 import CartContextProvider from './context/cartContext';
  
@@ -24,7 +24,7 @@ function App() {
         <Route path="/categoria/:idCategoria" element={<ItemListContainer />} />
         <Route path="/detalle/:idProducto" element={<ItemDetailContainer />} />
         <Route path="/carrito" element={<CarritoPage />} />
-        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/404" element={<NotFound404 />} />
         <Route path="*" element={<Navigate to='/404' />} />
        </Routes>

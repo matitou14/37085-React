@@ -12,7 +12,7 @@ function Item ({product}) {
                         <div className="card__body">
                             <h2 className="card__title">{product.name} </h2>
                             <p className="card__category">{product.category}</p>
-                            <h3 className="card__price">{product.price}</h3>
+                            <h3 className="card__price">${product.price}</h3>
 
             
                         </div> 

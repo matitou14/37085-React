@@ -1,8 +1,7 @@
 
 import React from "react";
-import { gFetch } from "../helpers/gFetch";
-// import ItemCount from "../ItemCount/ItemCount";
 import{useState, useEffect} from 'react';
+import {getFirestore, getDocs, collection,query, where } from 'firebase/firestore'
 import {useParams } from "react-router-dom";
 import "./ItemListContainer.scss"
 import { Loader } from "../Loaders/Loader";
@@ -16,26 +15,30 @@ function ItemListContainer() {
  const [products, setProducts] = useState([]);
  const [loading, setLoading ]= useState (true);
  const {idCategoria} = useParams()
-  console.log(idCategoria)
 
+useEffect(() => {
+    const db = getFirestore ();
+    const productCollection = collection (db, "products");
 
-    useEffect(() => {
-        if (idCategoria) {
- gFetch()
-.then(data => setProducts (data.filter(product => product.category === idCategoria)))
-.catch(err => console.log(err))
-.finally(() => setLoading(false))
-        } else {gFetch()
-            .then((data) => setProducts (data))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        }
-    }, [idCategoria]);
+    if (idCategoria) {
+    const queryFilter = query (productCollection, 
+      where(("category"), "==", idCategoria));
+    getDocs(queryFilter) 
+    .then(data => setProducts (data.docs.map(products => ({id: products.id, ...products.data()}))))
+    .catch(error => console.log(error))
+    .finally(() => setLoading(false)) 
+    } else {
+      getDocs(productCollection)
+      .then(data => setProducts (data.docs.map(products => ({id: products.id, ...products.data()}))))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false)) 
+    }
 
-  return(
+},[])
+
+return(
   <>
     <div> Pupinos kids  </div>
-    {/* <div> <ItemCount /> </div> */}
     { loading  ? <div> <Loader /> </div>
     :
     <ItemList products={products} /> }     
@@ -44,5 +47,6 @@ function ItemListContainer() {
   
 
 
-  }   
+  }  
+
 export default ItemListContainer

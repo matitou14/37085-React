@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import'./ItemDetailContainer.scss'
 import { ItemDetail } from '../../../ItemDetail/ItemDetail';
 import { Loader } from '../../../Loaders/Loader';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 
 
@@ -13,17 +14,14 @@ export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState (true);
   const { idProducto } = useParams ()
 
-
 useEffect(() => {
-  
-gFetch(idProducto)
-.then(data =>  setProduct(data))
-.catch(err => console.log(err))
-.finally(() => setLoading(false))
-  
-}, [idProducto]);
-
-console.log(product)
+  const db = getFirestore ();
+  const queryDoc = doc (db, "products", idProducto);
+  getDoc(queryDoc)
+  .then(data => setProduct ({id: data.id, ...data.data()}))
+  .catch(error => console.log(error))
+  .finally(() => setLoading(false))
+},[])
 
   return (
       <>

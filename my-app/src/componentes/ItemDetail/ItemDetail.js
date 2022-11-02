@@ -6,6 +6,8 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.scss';
 
 
+
+
 export const ItemDetail = ({ product }) => {
   const [isCount, setIsCount] = useState(true);
   const { addItem } = useCartContext()
@@ -22,8 +24,8 @@ export const ItemDetail = ({ product }) => {
         <img src={product.foto} alt="Foto producto" className="card__image__detail" />
         <div className="card__body">
           <h4 className="card__title">{product.name} </h4>
-          <p className="card__category">{product.category}</p>
-          <p className="card__price">{product.price}</p>
+          <p className="card__category">{product.description}</p>
+          <p className="card__price">${product.price}</p>
         
 
 
