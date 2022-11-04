@@ -34,7 +34,7 @@ useEffect(() => {
       .finally(() => setLoading(false)) 
     }
 
-},[])
+},[idCategoria])
 
 return(
   <>

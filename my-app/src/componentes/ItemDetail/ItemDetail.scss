@@ -26,6 +26,8 @@
     margin: 1rem;
     flex-grow: 1;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
   }
   .card__title{
     line-height: 1.4rem;

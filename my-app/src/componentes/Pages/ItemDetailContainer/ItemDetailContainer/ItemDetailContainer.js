@@ -21,7 +21,7 @@ useEffect(() => {
   .then(data => setProduct ({id: data.id, ...data.data()}))
   .catch(error => console.log(error))
   .finally(() => setLoading(false))
-},[])
+},[idProducto])
 
   return (
       <>

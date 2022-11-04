@@ -8,3 +8,14 @@
 li {
     list-style: none;
 }
+.img__cart{
+    width: 10rem;
+    height: 11rem;
+    object-fit:cover;
+    
+.img__cart:hover{
+    transform: scale(1.3);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+}}
