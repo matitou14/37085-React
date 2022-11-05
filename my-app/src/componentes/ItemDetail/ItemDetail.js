@@ -11,9 +11,8 @@ import './ItemDetail.scss';
 export const ItemDetail = ({ product }) => {
   const [isCount, setIsCount] = useState(true);
   const { addItem } = useCartContext()
-  const onAdd = (cantidad) => {
-    console.log('onAdd', cantidad);
-    addItem({ ...product, cantidad })
+  const onAdd = (quantity) => {
+    addItem({ ...product, quantity })
     setIsCount(false)
   }
   return (

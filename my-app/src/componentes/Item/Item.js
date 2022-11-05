@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Item.scss'
 
 function Item ({product}) {
   return (
     <>
+
     <div key={product.id} className ="wrapper">                        
             <Link to={`/detalle/${product.id}`}>     
                     
@@ -20,6 +22,7 @@ function Item ({product}) {
             </Link>
             
     </div>
+
     </>
   )
 }
