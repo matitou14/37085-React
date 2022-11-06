@@ -1,5 +1,4 @@
 import React from 'react';
-import { gFetch } from "../../../helpers/gFetch";
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import'./ItemDetailContainer.scss'

@@ -38,7 +38,7 @@ useEffect(() => {
 
 return(
   <>
-    <div> Pupinos kids  </div>
+    |
     { loading  ? <div> <Loader /> </div>
     :
     <ItemList products={products} /> }     

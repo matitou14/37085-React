@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import Navbar from './componentes/NavBar/Navbar';
 import { CarritoPage } from './componentes/Pages/ItemDetailContainer/CarritoPage/CarritoPage';
-
 import { NotFound404 } from './componentes/NotFound404/NotFound404';
 import { Contact } from './componentes/Contacto/Contact';
 import { ItemDetailContainer } from './componentes/Pages/ItemDetailContainer/ItemDetailContainer/ItemDetailContainer';
@@ -21,9 +20,9 @@ function App() {
       <Navbar /> 
       <Routes> 
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/categoria/:idCategoria" element={<ItemListContainer />} />
-        <Route path="/detalle/:idProducto" element={<ItemDetailContainer />} />
-        <Route path="/carrito" element={<CarritoPage />} />
+        <Route path="/category/:idCategoria" element={<ItemListContainer />} />
+        <Route path="/detail/:idProducto" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<CarritoPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/404" element={<NotFound404 />} />
         <Route path="*" element={<Navigate to='/404' />} />

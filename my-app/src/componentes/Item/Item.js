@@ -7,7 +7,7 @@ function Item ({product}) {
     <>
 
     <div key={product.id} className ="wrapper">                        
-            <Link to={`/detalle/${product.id}`}>     
+            <Link to={`/detail/${product.id}`}>     
                     
                      <div className="card">
                         <img src= {product.foto} alt="Foto producto" className="card__image"/>

@@ -4,6 +4,8 @@
 }
 .carrito__fin {
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 li {
     list-style: none;
@@ -16,8 +18,51 @@ li {
 .card__detail{
 display: grid;
 }
+.cart__msg{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1 rem;
+    font-weight: 600;
+    color: rgb(73, 73, 73);
 
+}
 
-.card__body{
-  
+.cart__render{
+
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1 rem;
+    font-weight: 600;
+}
+.btn__remove{
+    position: relative;
+    left: 5%;
+    top: -4rem;
+    color: red;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: azure;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+.btn__remove1{
+    position: relative;
+    left: 10%;
+    top: -25rem;
+    color: red;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: azure;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+.form{
+display: flex;
+flex-direction: column;
+width: 200px;
+height: 100px;
+margin: 0 auto;
+background-color: beige;
 }

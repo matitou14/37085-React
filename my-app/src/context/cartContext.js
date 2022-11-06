@@ -9,7 +9,7 @@ const [cartlist, setCartlist] = useState([])
 const [quantity, setquantity] = useState(0)
 
 const addItem = (prod) => {
-  const idx = cartlist.findIndex((product) => prod.id === prod.id) 
+  const idx = cartlist.findIndex((prod) => prod === prod.id) 
   if (idx === -1) {
     setCartlist([ ...cartlist, prod])
 }else{

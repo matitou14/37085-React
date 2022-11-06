@@ -84,12 +84,12 @@ const handleInputChange = (e) => {
 }
 
   return (
-    <div className='carrito__render'>
+    <div className='cart__render'>
      {idShop && <h2>Compra realizada con exito, su numero de orden es: {idShop}</h2> }
 
  {   cartlist.length === 0
             ?
-          <div>     
+          <div className='cart__msg'>     
             <h1>Carrito vacio</h1>
             <Link to='/'>Volver a la tienda</Link>
           </div>
@@ -101,11 +101,11 @@ const handleInputChange = (e) => {
      
      <ul className='carrito__fin'> 
         {cartlist.map((product) => <li> <div className='card__detail'> <img className="img__cart" src={product.foto} width="80%" alt=" Producto foto"/> <div className='card__body'> Nombre: {product.name} Categoria: {product.category} Cant: {product.quantity} </div> </div>
-        <button onClick={() => removeItem(product.id)}>X</button> </li>)}
+        <button className='btn__remove' onClick={() => removeItem(product.id)}>Eliminar item</button> </li>)}
     </ul>
      <h2> Total: ${ (totalCart ())}</h2> 
     
-    <form className= 'formulario' onSubmit={handleSubmit}>
+    <form className= 'form' onSubmit={handleSubmit}>
     <Typography/>
       <TextField
           helperText="Ingrese su nombre"
@@ -115,7 +115,7 @@ const handleInputChange = (e) => {
           value={dataForm.name}
           onChange={handleInputChange}
           />
-          {/* <p>{erroresDatos.nombre}</p> */}
+          <p>{erroresDatos.name}</p>
       <TextField
           helperText="Ingrese su Email"
           name="email"
@@ -128,7 +128,7 @@ const handleInputChange = (e) => {
           {!isSubmit&&<button  type="submit">Registrate</button>}
           {isSubmit&&<button onClick={createOrder}>Finalizar Compra</button>}
     </form>     
-      <button onClick={(clearCart)} > Vaciar Carrito</button>
+      <button className='btn__remove1' onClick={(clearCart)} > Vaciar Carrito</button>
       </>    
       }
     </div>)

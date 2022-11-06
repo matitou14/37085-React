@@ -5,9 +5,6 @@ import { useCartContext } from '../../context/cartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.scss';
 
-
-
-
 export const ItemDetail = ({ product }) => {
   const [isCount, setIsCount] = useState(true);
   const { addItem } = useCartContext()
@@ -36,7 +33,7 @@ export const ItemDetail = ({ product }) => {
             < ItemCount onAdd={onAdd} stock={product.stock} init={1} />
             :
             <div className='card__btn__inter'>
-              <Link to='/carrito'>
+              <Link to='/cart'>
                 <button>Ir al Carrito</button>
               </Link>
               <Link to='/'>
