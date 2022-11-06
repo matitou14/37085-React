@@ -20,8 +20,8 @@ function App() {
       <Navbar /> 
       <Routes> 
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/category/:idCategoria" element={<ItemListContainer />} />
-        <Route path="/detail/:idProducto" element={<ItemDetailContainer />} />
+        <Route path="/category/:idCategory" element={<ItemListContainer />} />
+        <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<CarritoPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/404" element={<NotFound404 />} />

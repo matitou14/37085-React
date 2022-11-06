@@ -13,7 +13,7 @@ export const CarritoPage = () => {
   phone: '',
   email: '',
 })
-const { cartlist, clearCart, totalCart, removeItem, quantity } = useCartContext()
+const { cartlist, clearCart, totalCart, removeItem, } = useCartContext()
 
 
 const createOrder = (e) => {
@@ -49,31 +49,31 @@ const createOrder = (e) => {
     })
   }
 
-    const [erroresDatos, setErroresDatos] = useState({})
+    const [dataError, setDataError] = useState({})
     const [isSubmit, setIsSubmit] = useState(false);
 
     const handleSubmit = (e) => {
     e.preventDefault();
-    setErroresDatos(validacion(dataForm));
-    if(Object.keys(erroresDatos).length===0){
+    setDataError(validate(dataForm));
+    if(Object.keys(dataError).length===0){
       setIsSubmit(true)
     }
-    setErroresDatos(validacion(dataForm));
+    setDataError(validate(dataForm));
  
     };
 
-  const validacion = (valores) => {
-    const errores = {};
+  const validate = (values) => {
+    const error = {};
   const regex =  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-  if (!valores.name) {
-      errores.name = "Escribe tu nombre completo!";
+  if (!values.name) {
+      error.name = "Escribe tu nombre completo!";
   }
-  if (!valores.email) {
-      errores.email = "Correo es requerido!";
-  } else if (!regex.test(valores.correo)) {
-      errores.email = "Este no es un correo valido!";
+  if (!values.email) {
+      error.email = "Correo es requerido!";
+  } else if (!regex.test(values.correo)) {
+      error.email = "Este no es un correo valido!";
   }
-  return errores;
+  return error;
 };
 
 const handleInputChange = (e) => {
@@ -115,7 +115,7 @@ const handleInputChange = (e) => {
           value={dataForm.name}
           onChange={handleInputChange}
           />
-          <p>{erroresDatos.name}</p>
+          <p>{dataError.name}</p>
       <TextField
           helperText="Ingrese su Email"
           name="email"

@@ -14,27 +14,18 @@ import ItemList from "../ItemList/ItemList";
 function ItemListContainer() {
  const [products, setProducts] = useState([]);
  const [loading, setLoading ]= useState (true);
- const {idCategoria} = useParams()
+ const {idCategory} = useParams()
 
 useEffect(() => {
     const db = getFirestore ();
     const productCollection = collection (db, "products");
-
-    if (idCategoria) {
-    const queryFilter = query (productCollection, 
-      where(("category"), "==", idCategoria));
-    getDocs(queryFilter) 
-    .then(data => setProducts (data.docs.map(products => ({id: products.id, ...products.data()}))))
-    .catch(error => console.log(error))
-    .finally(() => setLoading(false)) 
-    } else {
-      getDocs(productCollection)
+    const queryFilter = idCategory ? query(productCollection, where("category", "==", idCategory)) 
+    : productCollection
+     getDocs(queryFilter)
       .then(data => setProducts (data.docs.map(products => ({id: products.id, ...products.data()}))))
       .catch(error => console.log(error))
       .finally(() => setLoading(false)) 
-    }
-
-},[idCategoria])
+    },[idCategory])
 
 return(
   <>

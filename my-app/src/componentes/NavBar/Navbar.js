@@ -8,7 +8,8 @@ const Navbar = () => {
   return (
   <header className="header">
     <nav className='navbar'>
-    <img className="navbar__logo" src= "./assets/img/Pupinoss.png" alt="logo" />
+     
+    <Link to ='/'> <img className="navbar__logo"  src= "./assets/img/Pupinoss.png" alt="logo"/></Link>
       <input type="checkbox" className="input__nav" id="nav-toggle"/>
       <label htmlFor="nav-toggle"><i className="ri-menu-line"></i></label>
       <div className='navbar__menu'> 
