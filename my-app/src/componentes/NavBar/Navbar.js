@@ -18,6 +18,7 @@ const Navbar = () => {
           <li className='navbar__item'><Link to='/category/sillones' className='navbar__link'>Sillones</Link></li>
           <li className='navbar__item'><Link to='/category/catalogo' className='navbar__link'>Catalogo</Link></li>
           <li className='navbar__item'><Link to='/contact' className='navbar__link'>Contacto</Link></li>
+        
           <div>
             {totalQuantity () !== 0 && totalQuantity ()}
           <li className='navbar__item'><Link to='/cart' className='item__carrito'> <CartWidget /> </Link></li>  
